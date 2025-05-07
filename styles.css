@@ -43,7 +43,11 @@ header {
     z-index: 1000;
 }
 
-.navbar {
+.nav-container-mobile {
+    display: none;
+  }
+
+.nav-container-desktop {
     position: fixed;
     top: 0;
     width: 100%;
@@ -56,20 +60,20 @@ header {
     z-index: 1000;
 }
 
-.navbar .logo {
+.nav-container-desktop .logo {
     font-weight: 600;
     font-size: 2rem;
     color: #0243a4;
     margin: 0;
 }
 
-.navbar .nav-links {
+.nav-container-desktop .nav-links {
     list-style: none;
     display: flex;
     gap: 1.5rem;
 }
 
-.navbar .nav-links a {
+.nav-container-desktop .nav-links a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
@@ -86,20 +90,36 @@ header {
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
-    }
-    .nav-links {
+        color: #000;
+      }
+    
+      .nav-container-desktop {
         display: none;
-        flex-direction: column;
+      }
+    
+      .nav-container-mobile {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        padding: 15px 20px;
+      }
+    .nav-links {
         position: absolute;
-        top: 60px;
+        top: 65px;
+        left: 0;
         right: 0;
-        background: white;
-        width: 200px;
-        padding: 1rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        background-color: #fff;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        display: none;
+        list-style: none;
     }
     .nav-links.active {
         display: flex;
+    }
+    .navbar .nav-links a {
+        color: white;
     }
 }
 
@@ -297,11 +317,21 @@ footer .copyright {
     }
 
     .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #003366;
-        width: 100%;
-        padding: 1rem;
+        position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    display: none;
+    color: black;
+    
+    }
+    li{
+        list-style: none;
+        
     }
 
     .nav-links.active {
